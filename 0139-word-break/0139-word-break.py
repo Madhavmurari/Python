@@ -6,7 +6,7 @@ class Solution:
 
         for i in range(n-1,-1,-1):
             for w in wordDict:
-                if i+len(w)<=n and s[i:i+len(w)]==w:
+                if i+len(w)<=n and s[i:i+len(w)]==w: #s[i:i+len(w)] in wordDict:
                     dp[i]=dp[i+len(w)]
                 if dp[i]:
                     break
