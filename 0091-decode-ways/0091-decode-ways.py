@@ -38,7 +38,7 @@ class Solution:
             return 0
 
         n = len(s)
-        dp = {n: 1} 
+        dp = {n: 1} #dictionary
 
         for i in range(n - 1, -1, -1):
             if s[i] == "0":
