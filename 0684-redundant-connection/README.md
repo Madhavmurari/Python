@@ -27,6 +27,6 @@
 	<li><code>1 &lt;= a<sub>i</sub> &lt; b<sub>i</sub> &lt;= edges.length</code></li>
 	<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
 	<li>There are no repeated edges.</li>
-	<li>The given graph is connected.</li>
+	<li>The given graph is connected..</li>
 </ul>
 </div>
