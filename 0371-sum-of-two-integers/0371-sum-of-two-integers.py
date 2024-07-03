@@ -7,9 +7,9 @@ class Solution:
         # works both as while loop and single value check 
         while (b & mask) > 0:
             
-            carry = ( a & b ) << 1
+            carry = ( a & b ) 
             a = (a ^ b) 
-            b = carry
+            b = carry <<1
         
         # handles overflow
         return (a & mask) if b > 0 else a
