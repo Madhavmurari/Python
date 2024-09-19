@@ -1,30 +1,34 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        map={i:[] for i in range(numCourses)}
+        mapp={i:[] for i in range(numCourses)}
 
         for dest,src in prerequisites:
-            map[src].append(dest) 
-        
-        status=[0]*numCourses
+            mapp[src].append(dest) 
 
-        def dfs(course):
-            if status[course]==1:  # Found a cycle
+        visit=set()
+
+        def dfs(src):
+            if src in visit:
                 return False
-            if status[course]==2:  # Already visited node, no cycle from this node
+            if mapp[src]==[]:
                 return True 
-            status[course]=1
 
-            for neighbor in map[course]:
-                if not dfs(neighbor):
+            visit.add(src)
+
+            for destination in mapp[src]:
+                if not dfs(destination):
                     return False
-            status[course]=2  # Mark the course as completely visited
+            visit.remove(src)
+            mapp[src]=[]
             return True
-
-        for course in range(numCourses):  # Perform DFS for each course
-            if not dfs(course):
+        
+        for destination in range(numCourses):
+            if not dfs(destination):
                 return False
         return True
 
+        
+        
         
 
         
